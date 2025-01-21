@@ -137,7 +137,6 @@ const WelcomeText = styled.div`
   box-sizing: border-box;
   padding: 10px 0;
   margin-bottom: 1rem;
-  background-color: #282a36;
   color: #f8f8f2;
   font-size: 2rem;
   font-weight: bold;
@@ -158,26 +157,43 @@ const StyledCard = styled(Paper)`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: green;
-  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  background-color: #2c3e50; /* Dark background for better contrast */
+  color: black; /* Change text color to black */
   cursor: pointer;
   border-radius: 8px;
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: #2c2c6c;
-    color: green;
+    background-color: #34495e;
+    color: #ecf0f1;
     transform: scale(1.05);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    border-radius: 8px;
+    z-index: -1; /* Ensure overlay is behind text */
   }
 `;
 
 const StyledTypography = styled.h2`
   font-size: 1.5rem;
   margin-bottom: 10px;
+  color: black; /* Ensure text is visible and black */
+  text-shadow: none; /* Remove shadow to make the text solid black */
 `;
 
 const CardDescription = styled.p`
   font-size: 0.875rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.6);
+  color: black; /* Change description text to black */
+  text-shadow: none; /* Remove shadow */
 `;
+
